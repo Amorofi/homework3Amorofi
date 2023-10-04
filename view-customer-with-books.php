@@ -1,18 +1,24 @@
-<h1>Books</h1>
-
-      <?php
-      while ($book = $books->fetch_assoc()) {
-      ?>
-        <tr>
-          <td><?php echo $book['book_id']; ?></td>
-          <td><?php echo $book['title']; ?></td>
-          <td><?php echo $book['publication_date']; ?></td>
-          <td><?php echo $book['author_id']; ?></td>
-          <td><a href="customer-by-books.php?id=<?php echo $book['book_id']; ?>">Customer</a></td>
-        </tr>
-      <?php
+<h1>Customer with books</h1>
+<div class="card-group">
+ <?php
+while ($book = $books->fetch_assoc()) {
+ ?>
+      <div class="card">
+            <div class="card-body">
+                  <h5 class="card-title"><?php echo $book['title']; ?></h5>
+                  <p class="card-text">
+<?php
+      $customer = selectCustomerByBooks($book['book_id'];);
+      while ($customer = $customer->fetch_assoc()) {
+?>
+<?php
       }
-      ?>
-    </tbody>
-  </table>
+?>
+          </p>
+          <p class="card-text"><small class="text-body-secondary">publication: <?php echo $book['publication_date']; ?> </small></p>
+       </div>
+ </div>
+<?php
+}
+?>
 </div>
