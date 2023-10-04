@@ -19,7 +19,7 @@
           <td><?php echo $book['title']; ?></td>
           <td><?php echo $book['publication_date']; ?></td>
           <td><?php echo $book['author_id']; ?></td>
-          
+          <td><a href="customer-by-books.php?id=<?php echo $book['book_id']; ?>">Customer</a></td>
         </tr>
       <?php
       }
