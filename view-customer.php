@@ -11,13 +11,13 @@
     </thead>
     <tbody>
       <?php
-      while ($customer = $customer->fetch_assoc()) {
+      while ($customers = $customer->fetch_assoc()) {
       ?>
         <tr>
-          <td><?php echo $customer['customer_id']; ?></td>
-          <td><?php echo $customer['customer_name']; ?></td>
-          <td><?php echo $customer['email']; ?></td>
-          <td><?php echo $customer['phone']; ?></td>
+          <td><?php echo $customers['customer_id']; ?></td>
+          <td><?php echo $customers['customer_name']; ?></td>
+          <td><?php echo $customers['email']; ?></td>
+          <td><?php echo $customers['phone']; ?></td>
         </tr>
       <?php
       }
