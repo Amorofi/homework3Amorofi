@@ -1,5 +1,5 @@
 <?php
-function selectCustomers() {
+function selectCustomer() {
     try {
         $conn = get_db_connection();
         $stmt = $conn->prepare("SELECT customer_id, customer_name, email ,phone FROM `customers`");
