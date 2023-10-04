@@ -2,7 +2,7 @@
 require_once("util-db.php");
 require_once("model-customer.php");
 
-$pageTitle = "Customers";
+$pageTitle = "Customer";
 include "view-header.php";
 $customers = selectCustomer();
 include "view-customer.php";
