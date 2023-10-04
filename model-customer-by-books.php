@@ -1,5 +1,5 @@
 <?php
-function selectCustomerBybooks($cid) {
+function selectCustomerByBooks($cid) {
     try {
         $conn = get_db_connection();
         $stmt = $conn->prepare("SELECT b.book_id, title, publication_date, author_id, date, customer_id FROM `books` b join orders o on o.book_id = b.book_id where o.customer_id =?");
