@@ -18,6 +18,7 @@
           <td><?php echo $author['authors_name']; ?></td>
           <td><?php echo $author['birth_date']; ?></td>
           <td><?php echo $author['nationality']; ?></td>
+          <td><a href="books-by-author.php?id=<?php echo $author['authors_id']; ?>">Books</a></td>
         </tr>
       <?php
       }
