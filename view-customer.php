@@ -7,6 +7,7 @@
         <th>Customers </th>
         <th>Emails</th>
         <th>Phone Number</th>
+        <th></th>
       </tr>
     </thead>
     <tbody>
@@ -18,6 +19,14 @@
           <td><?php echo $customers['customer_name']; ?></td>
           <td><?php echo $customers['email']; ?></td>
           <td><?php echo $customers['phone']; ?></td>
+
+          <td>
+            <form method = "post" action="order-by-customer.php">
+                  <input type="hidden" name = "cid" value= "<td><?php echo $customers['customer_id']; ?></td>">
+                  <button type="submit" class="btn btn-primary">Orders</button>
+                </form>
+          </td>
+          
         </tr>
       <?php
       }
