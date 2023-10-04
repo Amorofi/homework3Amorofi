@@ -29,7 +29,7 @@
           <a class="nav-link" href="customer.php">Customers</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="customers-with-books.php">Customers with books</a>
+          <a class="nav-link" href="customer-by-books.php">Customers with books</a>
         </li>
 
       </ul>
