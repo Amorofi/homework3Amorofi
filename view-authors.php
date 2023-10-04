@@ -7,6 +7,7 @@
         <th>Name</th>
         <th>Date of Birth</th>
         <th>Nationality</th>
+        <th></th>
       </tr>
     </thead>
     <tbody>
