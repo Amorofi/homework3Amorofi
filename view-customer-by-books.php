@@ -4,9 +4,13 @@
     <thead>
       <tr>
         <th>ID</th>
+        <th>Author</th>
+        <th>Book title</th>
         <th>Customers </th>
         <th>Emails</th>
         <th>Phone Number</th>
+        <th>Publication</th>
+        
         <th></th>
       </tr>
     </thead>
@@ -19,6 +23,9 @@
           <td><?php echo $book['customer_name']; ?></td>
           <td><?php echo $book['email']; ?></td>
           <td><?php echo $book['phone']; ?></td>
+          <td><?php echo $book['author_id']; ?></td>
+          <td><?php echo $book['publication_date']; ?></td>
+          <td><?php echo $book['title']; ?></td>
           
         </tr>
       <?php
