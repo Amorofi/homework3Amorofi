@@ -24,7 +24,6 @@
           <td><?php echo $book['author_id']; ?></td>
           <td><?php echo $book['order_id']; ?></td>
           <td><?php echo $book['date']; ?></td>
-          <td><a href="customer-by-books.php?id=<?php echo $book['book_id']; ?>">Customer</a></td>
         </tr>
       <?php
       }
