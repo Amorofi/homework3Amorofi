@@ -22,7 +22,7 @@
 
           <td>
             <form method = "post" action="order-by-customer.php">
-                  <input type="hidden" name = "cid" value= "<td><?php echo $customers['customer_id']; ?></td>">
+                  <input type="hidden" name = "cid" value= "<?php echo $customers['customer_id']; ?>">
                   <button type="submit" class="btn btn-primary">Orders</button>
                 </form>
           </td>
