@@ -12,7 +12,7 @@
     </thead>
     <tbody>
       <?php
-      while ($customers = $customer->fetch_assoc()) {
+      while ($customer = $customer->fetch_assoc()) {
       ?>
         <tr>
           <td><?php echo $customers['customer_id']; ?></td>
