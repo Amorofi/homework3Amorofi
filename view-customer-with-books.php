@@ -9,7 +9,7 @@ while ($book = $books->fetch_assoc()) {
                   <p class="card-text">
                    <ul class="list-group">
 <?php
-      $books = selectCustomerbybooks($book['book_id'];);
+      $customer = selectCustomers($customer['customer_id'];);
       while ($customer = $customer->fetch_assoc()) {
 ?>
        <li class="list-group-item"><?php echo $book['publication_date']; ?> - <?php echo $book['title']; ?> - ><?php echo $book['date']; ?> </li>
