@@ -4,24 +4,22 @@
     <thead>
       <tr>
         <th>ID</th>
-        <th>Books Title</th>
-        <th>Publication date</th>
-        <th>Author ID</th>
-        <th>Date</th>
-        <th>Customer ID</th>
+        <th>Customers </th>
+        <th>Emails</th>
+        <th>Phone Number</th>
+        <th></th>
       </tr>
     </thead>
     <tbody>
       <?php
-      while ($book = $books->fetch_assoc()) {
+      while ($customers = $customer->fetch_assoc()) {
       ?>
         <tr>
-          <td><?php echo $book['book_id']; ?></td>
-          <td><?php echo $book['title']; ?></td>
-          <td><?php echo $book['publication_date']; ?></td>
-          <td><?php echo $book['author_id']; ?></td>
-          <td><?php echo $book['date']; ?></td>
-          <td><?php echo $book['customer_id']; ?></td>
+          <td><?php echo $customers['customer_id']; ?></td>
+          <td><?php echo $customers['customer_name']; ?></td>
+          <td><?php echo $customers['email']; ?></td>
+          <td><?php echo $customers['phone']; ?></td>
+          
         </tr>
       <?php
       }
