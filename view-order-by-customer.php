@@ -3,6 +3,7 @@
   <table class="table">
     <thead>
       <tr>
+        <th>Orders</th>
         <th>ID</th>
         <th>Books Title</th>
         <th>Publication date</th>
@@ -16,6 +17,7 @@
       while ($order = $orders->fetch_assoc()) {
       ?>
         <tr>
+          <td><?php echo $order['order_id']; ?></td>
           <td><?php echo $order['book_id']; ?></td>
           <td><?php echo $order['title']; ?></td>
           <td><?php echo $order['publication_date']; ?></td>
