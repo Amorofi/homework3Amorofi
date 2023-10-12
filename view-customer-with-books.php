@@ -9,9 +9,15 @@
       <h5 class="card-title"><?php echo $customers['customer_name']; ?></h5>
       <p class="card-text">
 <?php
-      $book = selectCustomerbybooks($customers['customer_id']);
+      $books = selectCustomerbybooks($customers['customer_id']);
       while ($book = $books->fetch_assoc()){
-?>                  
+?>       
+      <td><?php echo $book['book_id']; ?></td>
+      <td><?php echo $book['title']; ?></td>
+      <td><?php echo $book['publication_date']; ?></td>
+      <td><?php echo $book['author_id']; ?></td>
+      <td><?php echo $book['order_id']; ?></td>
+      <td><?php echo $book['date']; ?></td>
       <?php>
       }
 ?>
