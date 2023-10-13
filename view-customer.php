@@ -32,7 +32,11 @@
           <td><?php echo $customers['customer_name']; ?></td>
           <td><?php echo $customers['email']; ?></td>
           <td><?php echo $customers['phone']; ?></td>
-          <td></td>
+          <td>
+              <?php
+                include "view-customer-editform.php";
+              ?>
+          </td>
           <td>
               <form method = "post" action="">
                   <input type="hidden" name = "cid" value= "<?php echo $customers['customer_id']; ?>">
