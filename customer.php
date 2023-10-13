@@ -9,7 +9,7 @@ if (isset($_POST['actionType'])) {
   switch ($_POST['actionType']) {
     case "Add":
       if (insertCustomers($_POST['cName'], $_POST['cMail'], $_POST['cNumber'])) {
-          echo '<div class="alert alert-success" role="alert"> Customer was added. </div>'; 
+          echo '<div class="alert alert-success" role="alert"> Customer was successfully added. </div>'; 
         }else {
           echo '<div class="alert alert-danger" role="alert"> Error try again. </div>';
         }
@@ -17,7 +17,7 @@ if (isset($_POST['actionType'])) {
 
         case "Delete":
       if (deleteCustomers($_POST['cid'])) {
-          echo '<div class="alert alert-success" role="alert"> Customer was deleted. </div>'; 
+          echo '<div class="alert alert-success" role="alert"> Customer was successfully deleted. </div>'; 
         }else {
           echo '<div class="alert alert-danger" role="alert"> Error try again. </div>';
         }
