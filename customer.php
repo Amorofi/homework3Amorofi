@@ -15,6 +15,14 @@ if (isset($_POST['actionType'])) {
         }
       break;
 
+        case "Edit":
+      if (updateCustomers($_POST['cName'], $_POST['cMail'], $_POST['cNumber'], $_post['cid'])) {
+          echo '<div class="alert alert-success" role="alert"> Customer was successfully edited. </div>'; 
+        }else {
+          echo '<div class="alert alert-danger" role="alert"> Error try again. </div>';
+        }
+      break;
+    
         case "Delete":
       if (deleteCustomers($_POST['cid'])) {
           echo '<div class="alert alert-success" role="alert"> Customer was successfully deleted. </div>'; 
