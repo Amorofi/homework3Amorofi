@@ -9,7 +9,7 @@ if (isset($_POST['actionType'])) {
   switch ($_POST['actionType']) {
     case "Add":
       insertCustomers($_POST['cName'], $_POST['cMail'], $_POST['cNumber']);
-    break;
+      break;
   }
 }
 $customer = selectCustomers();
