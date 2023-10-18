@@ -12,9 +12,7 @@ function selectCustomers() {
         throw $e;
     }
 }
-?>
 
-<?php
 function selectCustomerbybooks($iid) {
     try {
         $conn = get_db_connection();
