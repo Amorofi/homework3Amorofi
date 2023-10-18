@@ -47,7 +47,7 @@ function insertOrder($cid, $bid, $date) {
 function updateOrder($cid, $bid, $date, $oid) {
     try {
         $conn = get_db_connection();
-        $stmt = $conn->prepare("update `order` set  `customer_id` = ?, `book_id` = ?, `date` = ? where order_id = ?");
+        $stmt = $conn->prepare("update `orders` set  `customer_id` = ?, `book_id` = ?, `date` = ? where order_id = ?");
         $stmt->bind_param("sssi", $cid, $bid, $date,$oid);
         $success = $stmt->execute();
         $conn->close();
@@ -61,7 +61,7 @@ function updateOrder($cid, $bid, $date, $oid) {
 function deleteOrder($oid) {
     try {
         $conn = get_db_connection();
-        $stmt = $conn->prepare("delete from order where order_id = ?");
+        $stmt = $conn->prepare("delete from orders where order_id = ?");
         $stmt->bind_param("i", $oid);
         $success = $stmt->execute();
         $conn->close();
