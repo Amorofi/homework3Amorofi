@@ -29,4 +29,47 @@ function selectCustomerbybooks($iid) {
         throw $e;
     }
 }
+
+function insertOrder($cid, $bid, $date) {
+    try {
+        $conn = get_db_connection();
+        $stmt = $conn->prepare("INSERT INTO `orders` (`customer_id`, `book_id`, `date`) VALUES ('?', '?', '?'))");
+        $stmt->bind_param("sss", $cid, $bid, $date);
+        $success = $stmt->execute();
+        $conn->close();
+        return $success;
+    } catch (Exception $e) {
+        $conn->close();
+        throw $e;
+    }
+}
+
+function updateOrder($cid, $bid, $date, $oid) {
+    try {
+        $conn = get_db_connection();
+        $stmt = $conn->prepare("update `order` set  `customer_id` = ?, `book_id` = ?, `date` = ? where order_id = ?");
+        $stmt->bind_param("sssi", $cid, $bid, $date,$oid);
+        $success = $stmt->execute();
+        $conn->close();
+        return $success;
+    } catch (Exception $e) {
+        $conn->close();
+        throw $e;
+    }
+}
+
+function deleteOrder($oid) {
+    try {
+        $conn = get_db_connection();
+        $stmt = $conn->prepare("delete from order where order_id = ?");
+        $stmt->bind_param("i", $oid);
+        $success = $stmt->execute();
+        $conn->close();
+        return $success;
+    } catch (Exception $e) {
+        $conn->close();
+        throw $e;
+    }
+}
+
 ?>
