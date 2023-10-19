@@ -8,7 +8,7 @@ include "view-header.php";
 if (isset($_POST['actionType'])) {
   switch ($_POST['actionType']) {
     case "Add":
-      if (insertCustomers($_POST['cName'], $_POST['cMail'], $_POST['cNumber'])) {
+      if (insertCustomers($_POST[`customer_id`], $_POST[`book_id`], $_POST[`date`])) {
           echo '<div class="alert alert-success" role="alert"> Customer was successfully added. </div>'; 
         }else {
           echo '<div class="alert alert-danger" role="alert"> Error try again. </div>';
@@ -16,7 +16,7 @@ if (isset($_POST['actionType'])) {
       break;
 
         case "Edit":
-      if (updateCustomers($_POST['cName'], $_POST['cMail'], $_POST['cNumber'], $_POST['cid'])) {
+      if (updateCustomers($_POST[`customer_id`], $_POST[`book_id`], $_POST[`date`], $_POST['cid'])) {
           echo '<div class="alert alert-success" role="alert"> Customer was successfully edited. </div>'; 
         }else {
           echo '<div class="alert alert-danger" role="alert"> Error try again. </div>';
