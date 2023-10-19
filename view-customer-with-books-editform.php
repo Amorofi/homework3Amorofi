@@ -17,7 +17,11 @@
         <form method = "post" action = "">
             <div class="mb-3">
               <label for="cName<?php echo $customers['customer_id']; ?>" class="form-label">Customer Name</label>
-              <input type="text" class="form-control" id="cName<?php echo $customers['customer_id']; ?>" name = "cName" value="<?php echo $customers['customer_name']; ?>">
+<?php
+$customerList = selectCustomersForInput();
+$selectedCustomer = $order['customer_id'];
+include "view-customer-input-list.php";
+?>
             </div>
             <div class="mb-3">
               <label for="cMail<?php echo $customers['customer_id']; ?>" class="form-label">Customer Mail</label>
