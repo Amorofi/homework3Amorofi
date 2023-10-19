@@ -20,6 +20,7 @@
               <label for="cid" class="form-label">Customer Id</label>
 <?php
 $customerList = selectCustomersForInput();
+$selectedCustomer = 0;
 include "view-customer-input-list.php";
 ?>
             </div>
