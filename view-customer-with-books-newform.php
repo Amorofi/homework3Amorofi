@@ -18,7 +18,10 @@
         <form method = "post" action = "">
             <div class="mb-3">
               <label for="cid" class="form-label">Customer Id</label>
-              <input type="text" class="form-control" id="cid" name = "cid">
+<?php
+$customerList = selectCustomersForInput();
+include "view-customer-input-list.php";
+?>
             </div>
             <div class="mb-3">
               <label for="bid" class="form-label">Book Id</label>
