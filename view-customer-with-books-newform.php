@@ -11,22 +11,22 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h1 class="modal-title fs-5" id="orderModalLabel">New Customer</h1>
+        <h1 class="modal-title fs-5" id="orderModalLabel">New Order</h1>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
         <form method = "post" action = "">
             <div class="mb-3">
-              <label for="cName" class="form-label">Customer Name</label>
-              <input type="text" class="form-control" id="cName" name = "cName">
+              <label for="cid" class="form-label">Customer Id</label>
+              <input type="text" class="form-control" id="cid" name = "cid">
             </div>
             <div class="mb-3">
-              <label for="cMail" class="form-label">Customer Mail</label>
-              <input type="text" class="form-control" id="cMail" name = "cMail">
+              <label for="bid" class="form-label">Book Id</label>
+              <input type="text" class="form-control" id="bid" name = "bid">
             </div>
             <div class="mb-3">
-              <label for="cNumber" class="form-label">Customer Number</label>
-              <input type="text" class="form-control" id="cNumber" name = "cNumber">
+              <label for="date" class="form-label">Date</label>
+              <input type="text" class="form-control" id="date" name = "date">
             </div>
 
             <input type="hidden" name="actionType" value="Add">
