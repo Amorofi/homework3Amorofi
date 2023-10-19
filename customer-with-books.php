@@ -16,7 +16,7 @@ if (isset($_POST['actionType'])) {
       break;
 
         case "Edit":
-      if (updateCustomers($_POST[`customer_id`], $_POST[`book_id`], $_POST[`date`], $_POST['cid'])) {
+      if (updateCustomers($_POST[`customer_id`], $_POST[`book_id`], $_POST[`date`], $_POST['$oid'])) {
           echo '<div class="alert alert-success" role="alert"> Customer was successfully edited. </div>'; 
         }else {
           echo '<div class="alert alert-danger" role="alert"> Error try again. </div>';
@@ -24,7 +24,7 @@ if (isset($_POST['actionType'])) {
       break;
     
         case "Delete":
-      if (deleteCustomers($_POST['cid'])) {
+      if (deleteCustomers($_POST['$oid'])) {
           echo '<div class="alert alert-success" role="alert"> Customer was successfully deleted. </div>'; 
         }else {
           echo '<div class="alert alert-danger" role="alert"> Error try again. </div>';
