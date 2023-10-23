@@ -59,7 +59,7 @@ function selectBooksForInput() {
 function insertOrder($cid, $bid, $date) {
     try {
         $conn = get_db_connection();
-        $stmt = $conn->prepare("INSERT INTO `orders` (`customer_id`, `book_id`, `date`) VALUES ('?', '?', '?')");
+        $stmt = $conn->prepare("INSERT INTO `orders` (`customer_id`, `book_id`, `date`) VALUES (?, ?, ?)");
         $stmt->bind_param("sss", $cid, $bid, $date);
         $success = $stmt->execute();
         $conn->close();
