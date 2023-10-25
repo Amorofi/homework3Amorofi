@@ -1,32 +1,27 @@
+<h1>Customers with books</h1>
+<div class="card-group">
 <?php
-function selectCustomers() {
-    try {
-        $conn = get_db_connection();
-        $stmt = $conn->prepare("SELECT customer_id, customer_name, email ,phone FROM `customer`");
-        $stmt->execute();
-        $result = $stmt->get_result();
-        $conn->close();
-        return $result;
-    } catch (Exception $e) {
-        $conn->close();
-        throw $e;
-    }
+while ($customers = $customer->fetch_assoc()) {
+?>
+ <div class="card">
+   <div class="card-body">
+      <h5 class="card-title"><?php echo $customers['customer_name']; ?></h5>
+      <p class="card-text">
+      <ul class="list-group">
+<?php
+ $books = selectCustomerbybooks($customers['customer_id']);
+ while ($book = $books->fetch_assoc()) {
+?>     
+  <li class="list-group-item"><?php echo $book['title']; ?> - <?php echo $book['author_id']; ?> - <?php echo $book['publication_date']; ?> - <?php echo $book['date']; ?></li>
+<?php
+ }
+?>
+      </ul>
+      </p>
+      <p class="card-text"><small class="text-body-secondary">Email: <?php echo $customers['email']; ?></small></p>
+      </div>
+ </div>
+<?php
 }
 ?>
-
-<?php
-function selectCustomerbybooks($iid) {
-    try {
-        $conn = get_db_connection();
-        $stmt = $conn->prepare("SELECT b.book_id, title, publication_date, author_id, order_id, date FROM `books` b join orders o on o.book_id = b.book_id where o.customer_id =? ");
-        $stmt->bind_param("i", $iid,);
-        $stmt->execute();
-        $result = $stmt->get_result();
-        $conn->close();
-        return $result;
-    } catch (Exception $e) {
-        $conn->close();
-        throw $e;
-    }
-}
-?>
+</div>
