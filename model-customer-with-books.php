@@ -56,11 +56,11 @@ function selectBooksForInput() {
     }
 }
 
-function insertOrder($cid, $bid, $date) {
+function insertOrder($cid, $bid, $ttitle, $pd, $aid, $ddate) {
     try {
         $conn = get_db_connection();
-        $stmt = $conn->prepare("INSERT INTO `orders` (`customer_id`, `book_id`, `date`) VALUES (?, ?, ?)");
-        $stmt->bind_param("sss", $cid, $bid, $date);
+        $stmt = $conn->prepare("INSERT INTO `orders` (`customer_id`, `book_id`, 'title', 'publication_date', 'author_id', 'date') VALUES (?, ?, ?, ?, ?, ?)");
+        $stmt->bind_param("sss", $cid, $bid, $ttitle, $pd, $aid, $ddate);
         $success = $stmt->execute();
         $conn->close();
         return $success;
@@ -70,11 +70,11 @@ function insertOrder($cid, $bid, $date) {
     }
 }
 
-function updateOrder($cid, $bid, $date, $oid) {
+function updateOrder($cid, $bid, $ttitle, $pd, $aid, $ddate, $oid) {
     try {
         $conn = get_db_connection();
-        $stmt = $conn->prepare("update `orders` set  `customer_id` = ?, `book_id` = ?, `date` = ? where order_id = ?");
-        $stmt->bind_param("sssi", $cid, $bid, $date,$oid);
+        $stmt = $conn->prepare("update `orders` set  `customer_id` = ?, `book_id` = ?, 'title' = ?, 'publication_date' = ?, `date` = ? where order_id = ?");
+        $stmt->bind_param("sssi", $cid, $bid,$ttitle, $pd, $aid, $ddate, $oid);
         $success = $stmt->execute();
         $conn->close();
         return $success;
