@@ -8,7 +8,7 @@ include "view-header.php";
 if (isset($_POST['actionType'])) {
   switch ($_POST['actionType']) {
     case "Add":
-      if (insertCustomers($_POST[`cid`], $_POST[`bid`],  $_POST['ttitle'], $_POST['pd'], $_POST['aid'], $_POST[`ddate`])) {
+      if (insertOrders($_POST[`cid`], $_POST[`bid`],  $_POST['ttitle'], $_POST['pd'], $_POST['aid'], $_POST[`ddate`])) {
           echo '<div class="alert alert-success" role="alert"> Customer was successfully added. </div>'; 
         }else {
           echo '<div class="alert alert-danger" role="alert"> Error try again. </div>';
@@ -16,7 +16,7 @@ if (isset($_POST['actionType'])) {
       break;
 
         case "Edit":
-      if (updateCustomers($_POST[`cid`], $_POST[`bid`],  $_POST['ttitle'], $_POST['pd'], $_POST['aid'], $_POST[`ddate`], $_POST['$oid'])) {
+      if (updateOrders($_POST[`cid`], $_POST[`bid`],  $_POST['ttitle'], $_POST['pd'], $_POST['aid'], $_POST[`ddate`], $_POST['$oid'])) {
           echo '<div class="alert alert-success" role="alert"> Customer was successfully edited. </div>'; 
         }else {
           echo '<div class="alert alert-danger" role="alert"> Error try again. </div>';
@@ -24,7 +24,7 @@ if (isset($_POST['actionType'])) {
       break;
     
         case "Delete":
-      if (deleteCustomers($_POST['$oid'])) {
+      if (deleteOrders($_POST['$oid'])) {
           echo '<div class="alert alert-success" role="alert"> Customer was successfully deleted. </div>'; 
         }else {
           echo '<div class="alert alert-danger" role="alert"> Error try again. </div>';
