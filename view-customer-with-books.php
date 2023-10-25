@@ -24,7 +24,14 @@ while ($customers = $customer->fetch_assoc()) {
 <?php
  $books = selectCustomerbybooks($customers['customer_id']);
  while ($book = $books->fetch_assoc()) {
-?>     
+?> 
+    <td> 
+      <?php
+         include "view-customer-with-books.php"
+      ?>
+    </td>    
+    
+  
   <li class="list-group-item"><?php echo $book['title']; ?> - <?php echo $book['author_id']; ?> - <?php echo $book['publication_date']; ?> - <?php echo $book['date']; ?></li>
 <?php
  }
