@@ -19,6 +19,8 @@ while ($customers = $customer->fetch_assoc()) {
       <h5 class="card-title"><?php echo $customers['customer_name']; ?></h5>
       <p class="card-text">
       <ul class="list-group">
+
+        
 <?php
  $books = selectCustomerbybooks($customers['customer_id']);
  while ($book = $books->fetch_assoc()) {
