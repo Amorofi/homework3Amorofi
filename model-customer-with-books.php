@@ -97,6 +97,6 @@ function deleteOrder($oid) {
         throw $e;
     }
 
-
+}
 
 ?>
