@@ -17,7 +17,7 @@
       <div class="modal-body">
         <form method = "post" action = "">
             <div class="mb-3">
-              <label for="cid" class="form-label">New customer and books</label>
+              <label for="cid" class="form-label">Customer</label>
 <?php
 $customerList = selectCustomersForInput();
 $selectedCustomer = 0;
