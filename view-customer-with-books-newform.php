@@ -17,7 +17,7 @@
       <div class="modal-body">
         <form method = "post" action = "">
             <div class="mb-3">
-              <label for="cid" class="form-label">Customer Id</label>
+              <label for="cid" class="form-label">New customer and books</label>
 <?php
 $customerList = selectCustomersForInput();
 $selectedCustomer = 0;
@@ -29,8 +29,20 @@ include "view-customer-input-list.php";
               <input type="text" class="form-control" id="bid" name = "bid">
             </div>
             <div class="mb-3">
-              <label for="date" class="form-label">Date</label>
-              <input type="text" class="form-control" id="date" name = "date">
+              <label for="ttitle" class="form-label">Title</label>
+              <input type="text" class="form-control" id="ttitle" name = "ttitle">
+            </div>
+            <div class="mb-3">
+              <label for="pd" class="form-label">Publication date</label>
+              <input type="text" class="form-control" id="pd" name = "pd">
+            </div>
+            <div class="mb-3">
+              <label for="aid" class="form-label">Author Id</label>
+              <input type="text" class="form-control" id="aid" name = "aid">
+            </div>
+            <div class="mb-3">
+              <label for="ddate" class="form-label">Date</label>
+              <input type="text" class="form-control" id="ddate" name = "ddate">
             </div>
 
             <input type="hidden" name="actionType" value="Add">
