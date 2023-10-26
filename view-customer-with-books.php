@@ -6,7 +6,8 @@
 <?php
 include "view-customer-with-books-newform.php";
 ?>
-
+  </div>
+</div>
 <div class="card-group">
 <?php
 while ($customers = $customer->fetch_assoc()) {
