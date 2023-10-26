@@ -1,4 +1,12 @@
-<h1>Customers with books</h1>
+<div class = "row">
+  <div class="col">
+    <h1>Customers with books</h1>
+  </div>
+ <div class="col-auto">
+<?php
+include "view-customer-with-books-newform.php";
+?>
+
 <div class="card-group">
 <?php
 while ($customers = $customer->fetch_assoc()) {
