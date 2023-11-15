@@ -1,27 +1,34 @@
-<h1>Authors</h1>
-<div class="table-responsive">
-  <table class="table">
-    <thead>
-      <tr>
-        <th>ID</th>
-        <th>Name</th>
-        <th>Date of Birth</th>
-        <th>Nationality</th>
-      </tr>
-    </thead>
-    <tbody>
-      <?php
-      while ($author = $authors->fetch_assoc()) {
-      ?>
-        <tr>
-          <td><?php echo $author['authors_id']; ?></td>
-          <td><?php echo $author['authors_name']; ?></td>
-          <td><?php echo $author['birth_date']; ?></td>
-          <td><?php echo $author['nationality']; ?></td>
-        </tr>
-      <?php
-      }
-      ?>
-    </tbody>
-  </table>
-</div>
+<h1>Authors chart</h1>
+<div>
+  <canvas id="myChart"></canvas>
+</div> 
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script>
+  const ctx = document.getElementById('myChart');
+
+  new Chart(ctx, {
+    type: 'doughnut',
+    data: {
+    datasets: [{
+        data: [
+<?php
+ while ($author = $authors->fetch_assoc()) {
+    echo $author['num_orders'] . ", ";
+    }
+?>
+        ]
+    }],
+
+    // These labels appear in the legend and in the tooltips when hovering different arcs
+    labels: [
+<?php
+$authors = selectAuthors();
+ while ($author = $authors->fetch_assoc()) {
+    echo "'" . $author['authors_name'] . "', ";
+    }
+?>
+    ]
+},
+  });
+</script>
